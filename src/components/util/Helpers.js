@@ -1,14 +1,29 @@
+import axios from 'axios'
+
 export const sleep = (delay) => {
 	var start = new Date().getTime();
 	while (new Date().getTime() < start + delay);
 }
 
-export const isAValidMessage = (messageText) => {
-	if(messageText === '1' || messageText === '2' || messageText === '3' ||
-		messageText === '4' || messageText === '5')
-		return true
-	else 
-		return false
+export const isAValidMessage = (messageText, currentOption) => {
+	if(currentOption > 0) { // if not in a middle of a question
+		if(messageText === '1' || messageText === '2' || messageText === '3' ||
+			messageText === '4' || messageText === '5')
+			return true
+		else 
+			return false
+	}
+	else {
+		switch(currentOption) {
+			case 1: // Fibonacci
+				if(parseInt(messageText, 10) >= 1)
+					return true
+			case 2: // Sign
+			case 2: // Name
+			case 2: // Joke
+			case 2: // Riddle
+		}
+	}
 }
 
 export const presentationMessage = (option) => {
@@ -24,7 +39,7 @@ export const presentationMessage = (option) => {
 			presentationMessage = 'Insert your full name'
 			break
 		case '4':
-			presentationMessage = 'Joke'
+			presentationMessage = getRandomJoke()
 			break
 		case '5':
 			presentationMessage = 'Riddle'
@@ -78,4 +93,11 @@ export const calculateFibonacci = (number) => {
 		}
 		return values
 	}
+}
+
+export const getRandomJoke = () => {
+	axios.get('https://official-joke-api.appspot.com/random_joke')
+	.then(response => {
+		return response.data.setup + " " + response.data.punchline
+	})
 }

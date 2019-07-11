@@ -35,11 +35,11 @@ class MessageContainer extends Container {
 			})
 		],
 		messages: [],
-		isTyping: false
+		currentQuestion: 0
 	}
 
 	userAddMessage = (messageText) => {
-		if(isAValidMessage(messageText)) {
+		if(isAValidMessage(messageText, this.state.currentQuestion)) {
 			this.setState(state => {
 				let newMessages = state.messages
 				newMessages.push(new Message({id: 0, message: messageText}))
@@ -64,23 +64,8 @@ class MessageContainer extends Container {
 
 
 
-	setIsTyping = () => {
-		this.setState({ isTyping: true })
-		sleep(1000)
-		this.setState({ isTyping: false })
-	}
-
-
-
-
-
-
-
 	getMessages = () => {
 		return this.state.messages
-	}
-	isTyping = () => {
-		return this.state.isTyping
 	}
 }
 
