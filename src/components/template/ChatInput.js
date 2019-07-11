@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { Subscribe } from 'unstated'
 import MessageContainer from '../../state/containers/MessageContainer'
 
@@ -35,12 +35,12 @@ export default class ChatInput extends React.Component {
 							placeholder={"type your message.."}
 							value={this.state.message}
 							onChange={(event) => {
-								this.setState({message: event.target.value});
+								this.setState({message: event.target.value})
 							}}
 						/>
 						<button onClick={() => {
 							if(this.state.message)
-								mc.addMessage(this.state.message)
+								mc.userAddMessage(this.state.message)
 						}}>Submit</button>
 					</div>
 				)}
