@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/goofy-chatbot/precache-manifest.07a168316946d80df2b97b8708dcaedc.js"
+  "/goofy-chatbot/precache-manifest.38894b7af6dbc0a9eb0dd1fe4d0ef115.js"
 );
 
 self.addEventListener('message', (event) => {

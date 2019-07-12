@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9cf44147551096108fbca413030e8a9f",
+    "revision": "d85b37b672013c64b76daec09fa48e5d",
     "url": "/goofy-chatbot/index.html"
   },
   {
