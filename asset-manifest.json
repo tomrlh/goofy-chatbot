@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/goofy-chatbot/static/css/main.2cce8147.chunk.css",
-    "main.js": "/goofy-chatbot/static/js/main.a4f6a05f.chunk.js",
-    "main.js.map": "/goofy-chatbot/static/js/main.a4f6a05f.chunk.js.map",
+    "main.js": "/goofy-chatbot/static/js/main.006f2336.chunk.js",
+    "main.js.map": "/goofy-chatbot/static/js/main.006f2336.chunk.js.map",
     "runtime~main.js": "/goofy-chatbot/static/js/runtime~main.50e8889e.js",
     "runtime~main.js.map": "/goofy-chatbot/static/js/runtime~main.50e8889e.js.map",
-    "static/js/2.81fe1e2a.chunk.js": "/goofy-chatbot/static/js/2.81fe1e2a.chunk.js",
-    "static/js/2.81fe1e2a.chunk.js.map": "/goofy-chatbot/static/js/2.81fe1e2a.chunk.js.map",
+    "static/js/2.673d01c9.chunk.js": "/goofy-chatbot/static/js/2.673d01c9.chunk.js",
+    "static/js/2.673d01c9.chunk.js.map": "/goofy-chatbot/static/js/2.673d01c9.chunk.js.map",
     "index.html": "/goofy-chatbot/index.html",
-    "precache-manifest.297a020f30c6d4152a645d5dffa58402.js": "/goofy-chatbot/precache-manifest.297a020f30c6d4152a645d5dffa58402.js",
+    "precache-manifest.85dde4ebd913ec7b8c00512ea02cc587.js": "/goofy-chatbot/precache-manifest.85dde4ebd913ec7b8c00512ea02cc587.js",
     "service-worker.js": "/goofy-chatbot/service-worker.js",
     "static/css/main.2cce8147.chunk.css.map": "/goofy-chatbot/static/css/main.2cce8147.chunk.css.map"
   }
