@@ -7,7 +7,8 @@ export const sleep = (delay) => {
 	while (new Date().getTime() < start + delay);
 }
 
-export const calculateFibonacci = (number) => {
+
+export const justCalculateFibonacci = (number) => {
 	if(parseInt(number, 10) >= 1) {
 		let counter = 0
 		let previous = 0
@@ -22,6 +23,30 @@ export const calculateFibonacci = (number) => {
 		}
 		return values.toString()
 	}
+}
+
+
+
+export const calculateFibonacci = (number) => {
+	if(parseInt(number, 10) >= 1) {
+		let counter = 0
+		let previous = 0
+		let next = 1
+		var values = []
+		values.push(previous)
+		values.push(next)
+
+		while(counter < number-2) {
+			values.push((values[values.length-1] + values[values.length-2]))
+			counter += 1
+		}
+		window.localStorage.setItem('fibonacciAnswer', values.toString())
+		return ''
+	}
+}
+
+export const showFibonacciAnswer = () => {
+	return window.localStorage.getItem('fibonacciAnswer')
 }
 
 export const isValidDate = (date) => {

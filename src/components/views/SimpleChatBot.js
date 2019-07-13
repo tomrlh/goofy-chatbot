@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import ChatBot from 'react-simple-chatbot';
 import RandomCatImage from '../template/RandomCatImage'
-import { calculateFibonacci, findSign, isValidDate, getRandomJoke, getJokeSetup, getJokePunchline } from '../util/Helpers'
+import { fibonacciComponent as FibonacciComponent } from '../FibonacciComponent'
+import { justCalculateFibonacci,calculateFibonacci, showFibonacciAnswer, findSign, isValidDate, getRandomJoke, getJokeSetup, getJokePunchline } from '../util/Helpers'
 
 class SimpleChatBot extends Component {
 
@@ -14,6 +15,7 @@ class SimpleChatBot extends Component {
 		    float: 'none',
 		    margin: '0 auto'
 		}
+
 		return (
 			<div>
 				<ChatBot
@@ -75,9 +77,21 @@ class SimpleChatBot extends Component {
 						},
 						{
 							id: 'calculateFibonacci',
-							message: ({ previousValue, steps }) => {
-								return 'Fibonacci sequence from ' + previousValue + ' is ' + calculateFibonacci(previousValue).toString()
-							},
+							component: <FibonacciComponent />,
+							trigger: 'finishedOption'
+						},
+						{
+							id: 'showFibonacciAnswer',
+							component: (
+								<div>
+									<p style={{
+    									maxWidth:'200px',
+    									wordWrap: 'breakWord'
+									}}>
+										{showFibonacciAnswer()}
+									</p>
+								</div>
+							),
 							trigger: 'finishedOption'
 						},
 						// ------------------------------------------
