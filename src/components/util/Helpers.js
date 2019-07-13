@@ -7,6 +7,17 @@ export const sleep = (delay) => {
 	while (new Date().getTime() < start + delay);
 }
 
+export const isValidDate = (date) => {
+	let regex = /^\d{2}[./-]\d{2}$/
+	let dateFormat = 'MM-DD';
+	let dateFormatted = moment(date).format(dateFormat)
+
+	if(date.match(regex) && moment(dateFormatted,dateFormat,true).isValid())
+		return true
+	else
+		return false
+}
+
 export const calculateFibonacci = (number) => {
 	if(parseInt(number, 10) >= 1) {
 		let counter = 0
@@ -24,17 +35,6 @@ export const calculateFibonacci = (number) => {
 	}
 }
 
-export const isValidDate = (date) => {
-	let regex = /^\d{2}[./-]\d{2}$/
-	let dateFormat = 'MM-DD';
-	let dateFormatted = moment(date).format(dateFormat)
-
-	if(date.match(regex) && moment(dateFormatted,dateFormat,true).isValid())
-		return true
-	else
-		return false
-}
-
 export const findSign = (date) => {
 	let wasMatched = signs.find(sign => moment(date).isBetween(sign.start, sign.end))
 	if(wasMatched)
@@ -45,25 +45,12 @@ export const findSign = (date) => {
 
 export const getRandomCat = () => {
 	return axios.get('https://api.thecatapi.com/v1/images/search')
-	.then(response => {
-		return response.data[0].url
-	})
+	.then(response => response.data[0].url)
+	.catch(error => {console.log(error)})
 }
 
 export const getRandomJoke = () => {
-	axios.get('https://official-joke-api.appspot.com/random_joke')
-	.then(response => {
-		window.localStorage.setItem('joke', JSON.stringify(response.data))
-		sleep(2000)
-	})
-}
-
-export const getJokeSetup = () => {
-	let joke = JSON.parse(window.localStorage.getItem('joke'))
-	return joke ? joke.setup : null
-}
-
-export const getJokePunchline = () => {
-	let joke = JSON.parse(window.localStorage.getItem('joke'))
-	return joke ? joke.punchline : null
+	return axios.get('https://official-joke-api.appspot.com/random_joke')
+	.then(response => response.data)
+	.catch(error => {console.log(error)})
 }

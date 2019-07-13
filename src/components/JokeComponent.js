@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { getRandomCat, sleep } from './util/Helpers'
+import { getRandomJoke, sleep } from './util/Helpers'
 import sp from 'synchronized-promise'
 
-class RandomKittenComponent extends Component {
+class JokeComponent extends Component {
 	constructor(props) {
 		super(props);
 
@@ -10,7 +10,8 @@ class RandomKittenComponent extends Component {
 			loading: true,
 			result: '',
 			trigger: false,
-			catUrl: '',
+			joke: '',
+			seeAnswer: false
 		};
 
 		this.triggetNext = this.triggetNext.bind(this);
@@ -22,14 +23,14 @@ class RandomKittenComponent extends Component {
 		});
 	}
 
-	async getNewCat() {
+	async getNewJoke() {
 		this.setState({ loading: true })
-		var url = await getRandomCat()
-		this.setState({ catUrl: url, loading: false })
+		var joke = await getRandomJoke()
+		this.setState({ joke: joke, loading: false })
 	}
 
 	componentWillMount() {
-		this.getNewCat()
+		this.getNewJoke()
 	}
 
 	render() {
@@ -39,9 +40,15 @@ class RandomKittenComponent extends Component {
 					{this.state.loading &&
 						<p>loading....</p>
 					}
-					<img src={this.state.catUrl} style={{maxWidth: '100%', maxHeight: '100%'}} alt="cute kitten"/>
-					<button onClick={() => this.getNewCat()}>
-						see other :3
+					
+					<p><i><b>{this.state.joke.setup}</b></i></p>
+					
+					{this.state.seeAnswer &&
+						<p><i>{this.state.joke.punchline}</i></p>
+					}
+
+					<button onClick={() => {this.setState({seeAnswer: true})}}>
+						see answer
 					</button>
 					<button onClick={() => this.triggetNext()}>
 						finish
@@ -51,4 +58,4 @@ class RandomKittenComponent extends Component {
 		);
 	}
 }
-export default RandomKittenComponent
+export default JokeComponent

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ChatBot from 'react-simple-chatbot';
 import RandomKittenComponent from '../RandomKittenComponent'
+import JokeComponent from '../JokeComponent'
 import { fibonacciComponent as FibonacciComponent } from '../FibonacciComponent'
 import { findSign, isValidDate, getRandomJoke, getJokeSetup, getJokePunchline } from '../util/Helpers'
 
@@ -49,11 +50,8 @@ class SimpleChatBot extends Component {
 						},
 						{
 							id: 'beginJoke',
-							message: ({ previousValue, steps }) => {
-								getRandomJoke()
-								return 'let me think...'
-							},
-							trigger: 'showJokeSetup'
+							message: 'let me think...',
+							trigger: 'showJoke'
 						},
 						{
 							id: 'beginCatImage',
@@ -105,23 +103,9 @@ class SimpleChatBot extends Component {
 
 						// ------------ TELL JOKE LOGIC -------------
 						{
-							id: 'showJokeSetup',
-							message: ({ previousValue, steps }) => {
-								return getJokeSetup()
-							},
-							trigger: 'getAnswer'
-						},
-						{
-							id: 'getAnswer',
-							options: [
-								{ value: 'view answer', label: 'show me the answer..', trigger: 'showJokePunchline' },
-							],
-						},
-						{
-							id: 'showJokePunchline',
-							message: ({ previousValue, steps }) => {
-								return getJokePunchline()
-							},
+							id: 'showJoke',
+							component: <JokeComponent />,
+							waitAction: true,
 							trigger: 'finishedOption'
 						},
 						// ------------------------------------------
