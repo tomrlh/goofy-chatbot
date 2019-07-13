@@ -1,6 +1,6 @@
 # Goofy Chatbot
 
-> A simple Chatbot that is able to answer a few questions.
+> A simple Chatbot able to answer a few questions.
 > Check it [here](https://tomurlh.github.io/goofy-chatbot/).
 
 #### Stack used
