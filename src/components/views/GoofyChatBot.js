@@ -3,7 +3,8 @@ import ChatBot from 'react-simple-chatbot';
 import RandomKittenComponent from '../RandomKittenComponent'
 import JokeComponent from '../JokeComponent'
 import { fibonacciComponent as FibonacciComponent } from '../FibonacciComponent'
-import { findSign, isValidDate, getRandomJoke, getJokeSetup, getJokePunchline } from '../util/Helpers'
+import { techStackComponent as TechStackComponent } from '../TechStackComponent'
+import { findSign, isValidDate } from '../util/Helpers'
 import { ThemeProvider } from 'styled-components';
 
 class SimpleChatBot extends Component {
@@ -52,7 +53,8 @@ class SimpleChatBot extends Component {
 									{ value: 'fibonacci', label: '1) Fibonacci sequence', trigger: 'beginFibonacci' },
 									{ value: 'findSign', label: '2) Find your sign', trigger: 'beginFindSign' },
 									{ value: 'joke', label: '3) Tell a joke', trigger: 'beginJoke' },
-									{ value: 'female', label: '4) See a kitten', trigger: 'beginCatImage' },
+									{ value: 'kitten', label: '4) See a kitten', trigger: 'beginCatImage' },
+									{ value: 'development', label: '4) Tell me how you was built', trigger: 'beginTechStack' },
 								],
 							},
 							{
@@ -74,6 +76,11 @@ class SimpleChatBot extends Component {
 								id: 'beginCatImage',
 								message: "so let's see a cute kitten XD",
 								trigger: 'showKitten'
+							},
+							{
+								id: 'beginTechStack',
+								component: <TechStackComponent />,
+								trigger: 'finishedOption'
 							},
 
 
