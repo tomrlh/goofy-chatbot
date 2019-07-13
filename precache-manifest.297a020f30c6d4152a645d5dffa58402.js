@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d85b37b672013c64b76daec09fa48e5d",
+    "revision": "53f25ee5baf1f3f8dd1f3741f4364377",
     "url": "/goofy-chatbot/index.html"
   },
   {
-    "revision": "68aba96465dd5220f907",
+    "revision": "a5b99b3661346d4090f4",
     "url": "/goofy-chatbot/static/css/main.2cce8147.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/goofy-chatbot/static/js/2.81fe1e2a.chunk.js"
   },
   {
-    "revision": "68aba96465dd5220f907",
-    "url": "/goofy-chatbot/static/js/main.53c8fbd4.chunk.js"
+    "revision": "a5b99b3661346d4090f4",
+    "url": "/goofy-chatbot/static/js/main.a4f6a05f.chunk.js"
   },
   {
     "revision": "7e5db1432dbd7224e04d",
