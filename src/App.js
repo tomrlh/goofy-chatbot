@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import SimpleChatBot from './components/views/SimpleChatBot'
+import GoofyChatBot from './components/views/GoofyChatBot'
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
 		<div className="App">
 			<h3>A simple chat bot demonstration</h3>
 
-			<SimpleChatBot/>
+			<GoofyChatBot/>
 
 			<br/>
 

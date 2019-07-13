@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { getRandomCat, sleep } from './util/Helpers'
-import sp from 'synchronized-promise'
+import { getRandomCat } from './util/Helpers'
 
 class RandomKittenComponent extends Component {
 	constructor(props) {

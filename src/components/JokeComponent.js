@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { getRandomJoke, sleep } from './util/Helpers'
-import sp from 'synchronized-promise'
+import { getRandomJoke } from './util/Helpers'
 
 class JokeComponent extends Component {
 	constructor(props) {
