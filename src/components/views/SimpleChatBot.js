@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ChatBot from 'react-simple-chatbot';
-import RandomCatImage from '../template/RandomCatImage'
+import RandomKittenComponent from '../RandomKittenComponent'
 import { fibonacciComponent as FibonacciComponent } from '../FibonacciComponent'
-import { justCalculateFibonacci,calculateFibonacci, showFibonacciAnswer, findSign, isValidDate, getRandomJoke, getJokeSetup, getJokePunchline } from '../util/Helpers'
+import { findSign, isValidDate, getRandomJoke, getJokeSetup, getJokePunchline } from '../util/Helpers'
 
 class SimpleChatBot extends Component {
 
@@ -80,20 +80,6 @@ class SimpleChatBot extends Component {
 							component: <FibonacciComponent />,
 							trigger: 'finishedOption'
 						},
-						{
-							id: 'showFibonacciAnswer',
-							component: (
-								<div>
-									<p style={{
-    									maxWidth:'200px',
-    									wordWrap: 'breakWord'
-									}}>
-										{showFibonacciAnswer()}
-									</p>
-								</div>
-							),
-							trigger: 'finishedOption'
-						},
 						// ------------------------------------------
 
 
@@ -143,7 +129,8 @@ class SimpleChatBot extends Component {
 						// ---------- SHOW KITTEN LOGIC -------------
 						{
 							id: 'beginCatImage',
-							component: <RandomCatImage/>,
+							component: <RandomKittenComponent/>,
+							waitAction: true,
 							trigger: 'finishedOption'
 						},
 						// ------------------------------------------

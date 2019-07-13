@@ -8,9 +8,11 @@
     "moment": "^2.24.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-promise": "^3.0.2",
     "react-scripts": "3.0.1",
     "react-simple-chatbot": "^0.6.1",
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.3.2",
+    "synchronized-promise": "^0.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

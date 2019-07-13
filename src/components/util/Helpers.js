@@ -7,8 +7,7 @@ export const sleep = (delay) => {
 	while (new Date().getTime() < start + delay);
 }
 
-
-export const justCalculateFibonacci = (number) => {
+export const calculateFibonacci = (number) => {
 	if(parseInt(number, 10) >= 1) {
 		let counter = 0
 		let previous = 0
@@ -23,30 +22,6 @@ export const justCalculateFibonacci = (number) => {
 		}
 		return values.toString()
 	}
-}
-
-
-
-export const calculateFibonacci = (number) => {
-	if(parseInt(number, 10) >= 1) {
-		let counter = 0
-		let previous = 0
-		let next = 1
-		var values = []
-		values.push(previous)
-		values.push(next)
-
-		while(counter < number-2) {
-			values.push((values[values.length-1] + values[values.length-2]))
-			counter += 1
-		}
-		window.localStorage.setItem('fibonacciAnswer', values.toString())
-		return ''
-	}
-}
-
-export const showFibonacciAnswer = () => {
-	return window.localStorage.getItem('fibonacciAnswer')
 }
 
 export const isValidDate = (date) => {
@@ -69,16 +44,10 @@ export const findSign = (date) => {
 }
 
 export const getRandomCat = () => {
-	axios.get('https://api.thecatapi.com/v1/images/search')
+	return axios.get('https://api.thecatapi.com/v1/images/search')
 	.then(response => {
-		window.localStorage.setItem('catUrl', JSON.stringify(response.data[0].url))
+		return response.data[0].url
 	})
-	.catch(error => {console.log(error)})
-}
-
-export const getRandomCatUrl = () => {
-	let catUrl = JSON.parse(window.localStorage.getItem('catUrl'))
-	return catUrl ? catUrl : null
 }
 
 export const getRandomJoke = () => {

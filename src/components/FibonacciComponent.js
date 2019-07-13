@@ -1,5 +1,5 @@
 import React from 'react'
-import { justCalculateFibonacci } from './util/Helpers'
+import { calculateFibonacci } from './util/Helpers'
 
 export const fibonacciComponent = (props) => {
 	const { steps } = props;
@@ -9,7 +9,14 @@ export const fibonacciComponent = (props) => {
 		<div>
 			the input was {fibonacciInput},
 			<br/>
-			the relative Fibonacci Sequence is: {justCalculateFibonacci(fibonacciInput)}
+			the relative Fibonacci Sequence is:
+			<br/>
+			<p style={{
+				maxWidth:'200px',
+				wordWrap: 'breakWord'
+			}}>
+				{calculateFibonacci(fibonacciInput)}
+			</p>
 		</div>
 	)
 }
