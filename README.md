@@ -21,4 +21,4 @@ npm start
 
 #### About
 
-Developed during the [QODA](https://qoda.com.br/curso/bootcamp-chatbots-para-whatsapp/) chatbot course.
+Developed to add projets to my portifolio
